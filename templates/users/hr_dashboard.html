@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Welcome, {{ user.get_full_name }}</h2>
+        <h3 class="mt-4">Available Resumes</h3>
+        <div class="table-responsive mt-3">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Upload Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for resume in resumes %}
+                    <tr>
+                        <td>{{ resume.user.get_full_name }}</td>
+                        <td>{{ resume.uploaded_at|date:"M d, Y" }}</td>
+                        <td>
+                            <a href="{% url 'download_resume' resume.id %}" class="btn btn-primary btn-sm">Download Resume</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

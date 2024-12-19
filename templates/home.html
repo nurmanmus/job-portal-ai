@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center text-center">
+        <div class="col-md-8">
+            <h1 class="mb-4">Welcome to Job Portal</h1>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Freelancer</h5>
+                            <p class="card-text">Upload your resume and find great opportunities.</p>
+                            <a href="{% url 'register_freelancer' %}" class="btn btn-primary">Register as Freelancer</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">HR Professional</h5>
+                            <p class="card-text">Find talented professionals for your company.</p>
+                            <a href="{% url 'register_hr' %}" class="btn btn-primary">Register as HR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
